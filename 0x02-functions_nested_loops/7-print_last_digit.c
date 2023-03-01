@@ -1,42 +1,26 @@
 #include "main.h"
 
 /**
- * jack_bauer - prints every minute of the day
+ * print_last_digit - prints the last digit of an integer
+ * @n: integer whose last digit we want to find
  *
- * Return: void
+ * Return: int
  */
 
-void jack_bauer(void)
+int print_last_digit(int n)
 {
-	int x = 0;
-	int a = 0, b = 0, c = 0, d = 0;
+	int last_digit;
 
-	while (x < 1440)
+	if (n < 0)
 	{
-		_putchar(a + '0');
-		_putchar(b + '0');
-		_putchar(':');
-		_putchar(c + '0');
-		_putchar(d + '0');
-		_putchar('\n');
-		
-		d++;
-		if (d > 9)
-		{
-			d = 0;
-			c++;
-		
-		}
-		if (c > 5)
-		{
-			c = 0;
-			b++;
-		}
-		if (b > 9)
-		{
-			b = 0;
-			a++;
-		}
-		x++;
+		last_digit = -1 * (n % 10);
+		_putchar(last_digit + 48);
+		return (last_digit);
+	}
+	else
+	{
+		last_digit = n % 10;
+		_putchar(last_digit + 48);
+		return (last_digit);
 	}
 }
